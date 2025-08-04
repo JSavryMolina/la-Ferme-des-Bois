@@ -1,12 +1,6 @@
-module.exports = {
-  content: ["./*.html"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
 // tailwind.config.js
 module.exports = {
+  content: ["./**/*.html"],
   theme: {
     extend: {
       colors: {
@@ -17,7 +11,8 @@ module.exports = {
         vermillon: '#C75B57',
         encre: '#2E4057',
         feuille: '#D9E4C4',
-      }
-    }
-  }
+      },
+    },
+  },
+  plugins: [],
 }
