@@ -1,0 +1,11 @@
+{
+  "name": "site-gite",
+  "version": "1.0.0",
+  "description": "Site pour un gîte en Normandie",
+  "scripts": {
+    "build": "npx tailwindcss -i ./style/tailwind.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  }
+}
