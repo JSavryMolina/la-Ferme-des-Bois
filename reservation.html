@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservation - La Ferme des Bois</title>
+  <link href="dist/output.css" rel="stylesheet" />
+  <style>
+    .fade-in {
+      animation: fadeIn 2s ease-in-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float {
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body class="bg-washi text-brun">
+
+  <!-- HEADER NAVIGATION IDENTIQUE -->
+  <header class="bg-matcha text-washi shadow-md">
+    <nav class="max-w-7xl mx-auto flex items-center justify-center gap-6 p-4 font-semibold text-lg">
+      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
+      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
+      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
+      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
+      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
+    </nav>
+  </header>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="flex items-center justify-center min-h-[80vh] px-4 py-16">
+    <section class="bg-feuille rounded-2xl shadow-2xl max-w-3xl w-full p-10 fade-in text-center space-y-8">
+      
+      <!-- Emojis flottants -->
+      <div class="text-6xl float">🏡⏳🌾</div>
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-matcha">Réservations bientôt disponibles</h1>
+
+      <p class="text-lg md:text-xl text-encre leading-relaxed">
+        Bientôt, vous pourrez réserver votre séjour directement sur notre site. Une maison normande chargée d’histoire, des nuits étoilées, des senteurs d’herbes du jardin, et l’écho du calme...
+      </p>
+
+      <p class="text-lg md:text-xl text-encre leading-relaxed">
+        À partir de <strong>2026</strong>, nos tarifs, disponibilités et réservations en ligne seront accessibles ici.
+      </p>
+
+      <p class="text-xl font-semibold text-brun">
+        Encore un peu de patience… et préparez-vous à une parenthèse hors du temps à <strong>La Ferme des Bois</strong>.
+      </p>
+
+      <div class="mt-6">
+        <a href="index.html" class="bg-matcha hover:bg-argile text-washi font-semibold px-6 py-3 rounded-full transition">
+          ⬅️ Retour à l'accueil
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brun text-washi text-center p-4 mt-12">
+    &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
+  </footer>
+
+</body>
+</html>

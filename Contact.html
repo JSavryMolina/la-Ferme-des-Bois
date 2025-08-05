@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - La Ferme des Bois</title>
+  <link href="dist/output.css" rel="stylesheet" />
+  <style>
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(2deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+  </style>
+</head>
+<body class="bg-washi text-brun min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="bg-matcha text-washi shadow-md">
+    <nav class="max-w-7xl mx-auto flex items-center justify-center gap-6 p-4 font-semibold text-lg">
+      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
+      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
+      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
+      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
+      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
+    </nav>
+  </header>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="flex-grow flex items-center justify-center px-4 py-16">
+    <section class="bg-feuille rounded-2xl shadow-2xl max-w-3xl w-full p-10 text-left space-y-8">
+
+      <!-- Animation feuille et bouteille -->
+      <div class="text-5xl float text-center">🌱🍶</div>
+
+      <!-- Titre -->
+      <h1 class="text-4xl font-extrabold text-matcha text-left">Contactez la Ferme des Bois</h1>
+
+      <!-- Intro -->
+      <p class="text-lg text-encre leading-relaxed text-justify">
+        Une question sur nos <strong>liqueurs artisanales</strong>, notre <strong>potager bio</strong> ou un <strong>séjour au gîte</strong> ? Écrivez-nous, nous vous répondrons avec plaisir.
+      </p>
+
+      <!-- Formulaire -->
+      <form action="#" method="POST" class="space-y-6">
+        <div>
+          <label class="block text-sm font-semibold mb-1" for="name">Nom</label>
+          <input type="text" id="name" name="name" required
+            class="w-full px-4 py-2 rounded-lg border border-brun focus:outline-none focus:ring-2 focus:ring-matcha">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1" for="email">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full px-4 py-2 rounded-lg border border-brun focus:outline-none focus:ring-2 focus:ring-matcha">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1" for="subject">Sujet</label>
+          <input type="text" id="subject" name="subject"
+            class="w-full px-4 py-2 rounded-lg border border-brun focus:outline-none focus:ring-2 focus:ring-matcha">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required
+            class="w-full px-4 py-2 rounded-lg border border-brun focus:outline-none focus:ring-2 focus:ring-matcha"></textarea>
+        </div>
+
+        <div class="text-right">
+          <button type="submit"
+            class="bg-matcha text-washi font-semibold px-6 py-3 rounded-full hover:bg-argile transition">
+            📩 Envoyer le message
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brun text-washi text-center p-4">
+    &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
+  </footer>
+
+</body>
+</html>

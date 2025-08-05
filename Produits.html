@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produits - La Ferme des Bois</title>
+  <link href="dist/output.css" rel="stylesheet" />
+  <style>
+    .leaf {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(3deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+  </style>
+</head>
+<body class="bg-washi text-brun min-h-screen flex flex-col">
+
+  <!-- Header navigation -->
+  <header class="bg-matcha text-washi shadow-md">
+    <nav class="max-w-7xl mx-auto flex items-center justify-center gap-6 p-4 font-semibold text-lg">
+      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
+      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
+      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
+      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
+      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="flex-grow min-h-[80vh] flex items-center justify-center px-4 py-16">
+    <section class="text-center max-w-xl bg-feuille rounded-xl shadow-xl p-10 space-y-6">
+
+      <!-- Icône feuille animée -->
+      <div class="text-6xl leaf">🌿</div>
+
+      <!-- Titre -->
+      <h1 class="text-4xl font-extrabold text-matcha">Page en construction</h1>
+
+      <!-- Texte explicatif -->
+      <p class="text-lg text-encre leading-relaxed">
+        Nos produits seront bientôt disponibles en ligne : <strong>liqueurs artisanales</strong>, herbes séchées, infusions et récoltes du potager bio.
+      </p>
+
+      <!-- Phrase finale -->
+      <p class="text-md text-brun font-semibold">
+        Merci de votre patience et à très bientôt à la Ferme des Bois !
+      </p>
+
+      <!-- Bouton -->
+      <a href="contact.html" class="inline-block bg-matcha text-washi px-6 py-3 rounded-full font-semibold hover:bg-argile transition">
+        🔔 Soyez prévenu du lancement
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brun text-washi text-center p-4 mt-12">
+    &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
+  </footer>
+
+</body>
+</html>

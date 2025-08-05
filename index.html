@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gîte en Normandie</title>
+  <title>La Ferme des Bois</title>
   <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-washi text-brun">
+<body class="bg-washi text-brun min-h-screen flex flex-col">
 
   <header class="bg-matcha text-washi shadow-md">
-    <nav class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-6 p-4 font-semibold text-lg">
+    <nav class="max-w-7xl mx-auto flex items-center justify-center gap-6 p-4 font-semibold text-lg">
       <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
       <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
       <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
@@ -18,22 +18,32 @@
     </nav>
   </header>
 
-  <main class="min-h-[80vh] flex items-center justify-center px-4 py-16">
+  <main class="flex-grow min-h-[80vh] flex items-center justify-center px-4 py-16">
     <section class="bg-feuille rounded-lg shadow-lg p-12 max-w-4xl w-full">
-      
-      <h1 class="text-[6rem] font-extrabold text-matcha mb-8 leading-tight">
-        La Ferme des Bois
-      </h1>
-      
-      <p class="text-lg md:text-xl text-encre mb-8 leading-relaxed text-justify">
-        Nichée au cœur du bocage normand, entre l’Orne et le Calvados, le gîte de la Ferme des Bois vous invite à vivre une parenthèse enchantée dans un cadre authentique, paisible et chargé d’histoire.<br><br>
-        Autrefois habitée par Charlotte Corday dans son enfance, elle revit aujourd’hui grâce à un projet franco-japonais mêlant terroir, potager bio, et liqueurs artisanales.
-      </p>
-      
-      <p class="text-xl font-bold text-brun">
-        Bienvenue chez vous, à la Ferme des Bois, située dans la commune de <strong>Le Renouard</strong>.
-      </p>
-      
+
+      <!-- Titre principal -->
+      <div class="mb-16">
+        <h1 class="text-[5rem] leading-tight font-extrabold text-matcha text-left">
+          La Ferme des Bois
+        </h1>
+      </div>
+
+      <!-- Texte principal justifié -->
+      <div class="mb-10">
+        <p class="text-lg md:text-xl text-encre leading-relaxed text-justify">
+          Nichée au cœur du bocage normand, entre l’Orne et le Calvados, le gîte de la Ferme des Bois vous invite à vivre une parenthèse enchantée dans un cadre authentique, paisible et chargé d’histoire.
+          <br>
+          Autrefois habitée par Charlotte Corday dans son enfance, elle revit aujourd’hui grâce à un projet franco-japonais mêlant terroir, potager bio, et liqueurs artisanales.
+        </p>
+      </div>
+
+      <!-- Phrase finale en gras -->
+      <div>
+        <p class="text-xl font-bold text-brun text-left">
+          Bienvenue chez vous, à la Ferme des Bois, située dans la commune <strong>Le Renouard</strong>.
+        </p>
+      </div>
+
     </section>
   </main>
 
