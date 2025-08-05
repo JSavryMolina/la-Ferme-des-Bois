@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Ferme des Bois</title>
   <link href="dist/output.css" rel="stylesheet">
-
-  <!-- Font Awesome pour les icônes sociales -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-+aHIFK1LAs7LNK0uqApGBu3R7OjYfONACZJ+osXwKMo88wJwAJ2qayLZKEFRCr9S1L5EK1X1Jf3Woxap5R9FOg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-washi text-brun min-h-screen flex flex-col">
 
-  <!-- Header chargé dynamiquement -->
-  <div id="header-placeholder"></div>
 
-  <main class="flex-grow min-h-[80vh] flex items-center justify-center px-4 py-16">
+  <header class="bg-matcha text-washi shadow-md">
+    <nav class="max-w-7xl mx-auto flex items-center justify-center gap-6 p-4 font-semibold text-lg">
+      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
+      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
+      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
+      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
+      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
+    </nav>
+  </header>
+
+  <main class="min-h-[80vh] flex items-center justify-center px-4 py-16">
     <section class="bg-feuille rounded-lg shadow-lg p-12 max-w-4xl w-full">
+
       <!-- Titre principal -->
       <div class="mb-16">
         <h1 class="text-[5rem] leading-tight font-extrabold text-matcha text-left">
@@ -41,28 +44,13 @@
           Bienvenue chez vous, à la Ferme des Bois, située dans la commune <strong>Le Renouard</strong>.
         </p>
       </div>
+
     </section>
   </main>
 
-  <!-- Footer chargé dynamiquement -->
-  <div id="footer-placeholder"></div>
-
-  <!-- Scripts d’inclusion -->
-  <script>
-    // Inclusion du header
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-      });
-
-    // Inclusion du footer
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
-  </script>
+  <footer class="bg-brun text-washi text-center p-4 mt-12">
+    &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
+  </footer>
 
 </body>
 </html>

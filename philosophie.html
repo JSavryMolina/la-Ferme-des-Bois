@@ -8,21 +8,10 @@
 </head>
 <body class="bg-washi text-brun min-h-screen flex flex-col">
 
-  <!-- Header navigation -->
-  <header class="bg-matcha text-washi shadow-md">
-    <nav class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-6 p-4 font-semibold text-lg">
-      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
-      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
-      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
-      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
-      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
-    </nav>
-  </header>
+  <!-- HEADER dynamique -->
+  <div id="header"></div>
 
-  <!-- Contenu principal -->
   <main class="flex-grow pt-12 px-4 pb-8 max-w-4xl mx-auto">
-
-    <!-- Section Philosophie intégrée dans la page d’accueil -->
     <section class="bg-feuille rounded-lg shadow-md p-8 mb-12">
       <h2 class="text-3xl font-bold mb-6 text-matcha">Notre philosophie</h2>
       <p class="mb-4 text-encre leading-relaxed">
@@ -44,13 +33,19 @@
         En plein cœur de la Normandie, notre gîte vous accueille toute l’année.
       </p>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer class="bg-brun text-washi text-center p-4 mt-12">
     &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
   </footer>
 
+  <!-- Script pour charger le header dynamiquement -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
 </body>
 </html>

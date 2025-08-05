@@ -24,16 +24,8 @@
 </head>
 <body class="bg-washi text-brun">
 
-  <!-- HEADER NAVIGATION IDENTIQUE -->
-  <header class="bg-matcha text-washi shadow-md">
-    <nav class="max-w-7xl mx-auto flex items-center justify-center gap-6 p-4 font-semibold text-lg">
-      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
-      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
-      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
-      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
-      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
-    </nav>
-  </header>
+  <!-- HEADER chargé dynamiquement -->
+  <div id="header"></div>
 
   <!-- CONTENU PRINCIPAL -->
   <main class="flex items-center justify-center min-h-[80vh] px-4 py-16">
@@ -69,6 +61,15 @@
   <footer class="bg-brun text-washi text-center p-4 mt-12">
     &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
   </footer>
+
+  <!-- Script pour insérer le header -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>
