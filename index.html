@@ -8,6 +8,35 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Conteneur du titre avec animations */
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* Animation de translation verticale douce */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Styles des petites animations à gauche/droite */
+    .floating-icon {
+      width: 40px;
+      height: 40px;
+      fill: #7BBF6A; /* couleur matcha claire */
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Inverse l’animation à droite pour plus de dynamisme */
+    .floating-icon.right {
+      animation-direction: reverse;
+    }
+  </style>
 </head>
 
 <body class="bg-washi text-brun min-h-screen flex flex-col">
@@ -21,9 +50,21 @@
       
       <!-- Titre principal -->
       <div class="mb-6 text-center">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-matcha leading-tight">
-          La Ferme des Bois
-        </h1>
+        <div class="title-container">
+          <!-- Animation gauche -->
+          <svg class="floating-icon left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+            <path d="M12 2C10 5 6 8 6 13c0 4 3 7 6 7s6-3 6-7c0-5-4-8-6-11z"/>
+          </svg>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-matcha leading-tight">
+            La Ferme des Bois
+          </h1>
+
+          <!-- Animation droite -->
+          <svg class="floating-icon right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+            <path d="M12 2C10 5 6 8 6 13c0 4 3 7 6 7s6-3 6-7c0-5-4-8-6-11z"/>
+          </svg>
+        </div>
         <!-- Saut de ligne visuel -->
         <hr class="border-matcha border-t-2 w-1/2 mx-auto my-4">
       </div>
@@ -40,7 +81,7 @@
       <!-- Phrase finale -->
       <div class="text-center">
         <p id="phrase-finale" class="text-base sm:text-lg md:text-xl font-bold text-matcha opacity-0 transition-opacity duration-1000 whitespace-nowrap">
-          Au Renouard, le temps ralentit. La nature s'exprime. Bienvenue chez vous.
+          Au Renouard, le temps ralentit. La nature s'exprime. Bienvenue chez vous
         </p>
       </div>
     </section>
