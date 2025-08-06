@@ -4,64 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Ferme des Bois</title>
-  <link href="dist/output.css" rel="stylesheet">
-
-  <!-- Font Awesome pour les icônes sociales -->
+  <link href="dist/output.css" rel="stylesheet" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-+aHIFK1LAs7LNK0uqApGBu3R7OjYfONACZJ+osXwKMo88wJwAJ2qayLZKEFRCr9S1L5EK1X1Jf3Woxap5R9FOg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body class="bg-washi text-brun min-h-screen flex flex-col">
 
   <!-- Header chargé dynamiquement -->
   <div id="header-placeholder"></div>
 
-  <main class="flex-grow min-h-[80vh] flex items-center justify-center px-4 py-16">
-    <section class="bg-feuille rounded-lg shadow-lg p-12 max-w-4xl w-full">
+  <!-- Contenu principal -->
+  <main class="flex-grow flex items-center justify-center px-4 py-8">
+    <section class="bg-feuille rounded-lg shadow-lg p-6 sm:p-8 md:p-10 max-w-xl w-full">
+      
       <!-- Titre principal -->
-      <div class="mb-16">
-        <h1 class="text-[5rem] leading-tight font-extrabold text-matcha text-left">
+      <div class="mb-6 text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-matcha leading-tight">
           La Ferme des Bois
         </h1>
+        <!-- Saut de ligne visuel -->
+        <hr class="border-matcha border-t-2 w-1/2 mx-auto my-4">
       </div>
 
-      <!-- Texte principal justifié -->
-      <div class="mb-10">
-        <p class="text-lg md:text-xl text-encre leading-relaxed text-justify">
+      <!-- Texte principal -->
+      <div class="mb-6">
+        <p class="text-sm sm:text-base md:text-lg text-encre leading-relaxed text-justify">
           Nichée au cœur du bocage normand, entre l’Orne et le Calvados, le gîte de la Ferme des Bois vous invite à vivre une parenthèse enchantée dans un cadre authentique, paisible et chargé d’histoire.
-          <br>
+          <br class="hidden sm:block">
           Autrefois habitée par Charlotte Corday dans son enfance, elle revit aujourd’hui grâce à un projet franco-japonais mêlant terroir, potager bio, et liqueurs artisanales.
         </p>
       </div>
 
-      <!-- Phrase finale en gras -->
-      <div>
-        <p class="text-xl font-bold text-brun text-left">
-          Bienvenue chez vous, à la Ferme des Bois, située dans la commune <strong>Le Renouard</strong>.
+      <!-- Phrase finale -->
+      <div class="text-center">
+        <p id="phrase-finale" class="text-base sm:text-lg md:text-xl font-bold text-matcha opacity-0 transition-opacity duration-1000 whitespace-nowrap">
+          Au Renouard, le temps ralentit. La nature s'exprime. Bienvenue chez vous.
         </p>
       </div>
     </section>
   </main>
 
-  <!-- Footer chargé dynamiquement -->
+  <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Scripts d’inclusion -->
+  <!-- Inclusions dynamiques + script menu -->
   <script>
-    // Inclusion du header
     fetch('header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
+
+        const toggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (toggle && mobileMenu) {
+          toggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+
+          window.addEventListener('resize', () => {
+            if (window.innerWidth >= 640) {
+              mobileMenu.classList.add('hidden');
+            }
+          });
+        }
       });
 
-    // Inclusion du footer
     fetch('footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
       });
+
+    // Animation fade-in
+    window.addEventListener('load', () => {
+      const phrase = document.getElementById('phrase-finale');
+      if (phrase) {
+        phrase.classList.remove('opacity-0');
+        phrase.classList.add('opacity-100');
+      }
+    });
   </script>
 
 </body>

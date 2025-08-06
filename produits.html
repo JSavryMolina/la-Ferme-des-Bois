@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produits - La Ferme des Bois</title>
   <link href="dist/output.css" rel="stylesheet" />
+  <!-- Font Awesome pour les icônes sociales -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .leaf {
       animation: float 4s ease-in-out infinite;
@@ -20,7 +24,7 @@
 <body class="bg-washi text-brun min-h-screen flex flex-col">
 
   <!-- Header chargé dynamiquement -->
-  <div id="header"></div>
+  <div id="header-placeholder"></div>
 
   <!-- Contenu principal -->
   <main class="flex-grow min-h-[80vh] flex items-center justify-center px-4 py-16">
@@ -49,19 +53,22 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-brun text-washi text-center p-4 mt-12">
-    &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
-  </footer>
+  <!-- Footer chargé dynamiquement -->
+  <div id="footer-placeholder"></div>
 
-  <!-- Script pour insérer le header -->
+  <!-- Scripts d’inclusion -->
   <script>
     fetch('header.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('header').innerHTML = data;
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
       });
   </script>
-
 </body>
 </html>

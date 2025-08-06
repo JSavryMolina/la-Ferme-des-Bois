@@ -977,3 +977,8 @@ video {
     line-height: 1;
   }
 }
+/* Scroll horizontal fluide */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}

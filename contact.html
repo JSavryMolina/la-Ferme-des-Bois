@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - La Ferme des Bois</title>
   <link href="dist/output.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .float {
       animation: float 4s ease-in-out infinite;
@@ -19,7 +22,7 @@
 <body class="bg-washi text-brun min-h-screen flex flex-col">
 
   <!-- Header inclus dynamiquement -->
-  <div id="header"></div>
+  <div id="header-placeholder"></div>
 
   <!-- CONTENU PRINCIPAL -->
   <main class="flex-grow flex items-center justify-center px-4 py-16">
@@ -72,17 +75,21 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-brun text-washi text-center p-4">
-    &copy; 2025 La Ferme des Bois - Le Renouard - Tous droits réservés
-  </footer>
+  <!-- Footer chargé dynamiquement -->
+  <div id="footer-placeholder"></div>
 
-  <!-- Script pour inclure le header -->
+  <!-- Scripts d’inclusion -->
   <script>
     fetch('header.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('header').innerHTML = data;
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
       });
   </script>
 
