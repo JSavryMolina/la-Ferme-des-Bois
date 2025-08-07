@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrousel Gîte – Effet fondu</title>
+  <link href="dist/output.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    #carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-image {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      z-index: 0;
+    }
+
+    .carousel-image.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #65a30d;
+      color: white;
+      border: none;
+      padding: 14px 18px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 9999px;
+      z-index: 2;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .arrow-btn:hover {
+      background-color: #4d7c0f;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    #prevBtn {
+      left: 20px;
+    }
+
+    #nextBtn {
+      right: 20px;
+    }
+
+    .arrow-btn i {
+      transition: transform 0.3s ease;
+    }
+
+    #prevBtn:hover i {
+      transform: translateX(-5px);
+    }
+
+    #nextBtn:hover i {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body class="bg-washi flex items-center justify-center min-h-screen">
+
+  <div id="carousel-container">
+    <button id="prevBtn" class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+    <button id="nextBtn" class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+
+    <img src="photos/panorama_1.jpeg" alt="Panorama 1" class="carousel-image active" />
+    <img src="photos/potager.jpg" alt="Potager" class="carousel-image" />
+    <img src="photos/maisons_panarama.jpg" alt="Maisons" class="carousel-image" />
+    <img src="photos/Maillot La Ferme des Bois.png" alt="Maillot" class="carousel-image" />
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.carousel-image');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+  </script>
+
+</body>
+</html>
