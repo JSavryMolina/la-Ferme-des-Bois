@@ -1,25 +1,18 @@
 <!-- header.html -->
-<header class="bg-matcha text-washi shadow-md">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-    
-    <!-- Top row: logo + burger -->
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="index.html" class="text-xl font-bold">La Ferme des Bois</a>
+<header class="fixed top-0 left-0 z-50 shadow-md">
+  <div class="bg-matcha text-washi max-w-7xl mx-auto px-4 py-2 flex items-center justify-between h-16 rounded-md">
+    <!-- Logo à gauche -->
+    <a href="index.html" class="flex items-center">
+      <img src="photos/logo_la_ferme_des_bois_web.png" alt="Logo La Ferme des Bois" class="h-12 w-auto">
+    </a>
 
-      <!-- Burger icon (mobile only) -->
-      <button id="menu-toggle" class="sm:hidden text-2xl focus:outline-none" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Menu container -->
-    <nav id="mobile-menu" class="hidden sm:flex flex-col sm:flex-row gap-4 sm:gap-6 font-semibold text-lg pt-4 sm:pt-0">
-      <a href="index.html" class="hover:underline hover:text-argile">Accueil</a>
-      <a href="philosophie.html" class="hover:underline hover:text-argile">Philosophie</a>
-      <a href="produits.html" class="hover:underline hover:text-argile">Produits</a>
-      <a href="reservation.html" class="hover:underline hover:text-argile">Réservation</a>
-      <a href="contact.html" class="hover:underline hover:text-argile">Contact</a>
+    <!-- Menu horizontal visible partout -->
+    <nav class="flex gap-6 font-semibold text-lg h-full items-center">
+      <a href="index.html" class="hover:underline hover:text-argile h-full flex items-center">Accueil</a>
+      <a href="philosophie.html" class="hover:underline hover:text-argile h-full flex items-center">Philosophie</a>
+      <a href="produits.html" class="hover:underline hover:text-argile h-full flex items-center">Produits</a>
+      <a href="reservation.html" class="hover:underline hover:text-argile h-full flex items-center">Réservation</a>
+      <a href="contact.html" class="hover:underline hover:text-argile h-full flex items-center">Contact</a>
     </nav>
   </div>
 </header>
