@@ -6,13 +6,39 @@
       <img src="photos/logo_la_ferme_des_bois_web.png" alt="Logo La Ferme des Bois" class="h-12 w-auto">
     </a>
 
-    <!-- Menu horizontal visible partout -->
+    <!-- Menu horizontal + panier -->
     <nav class="flex gap-6 font-semibold text-lg h-full items-center">
       <a href="index.html" class="hover:underline hover:text-argile h-full flex items-center">Accueil</a>
       <a href="philosophie.html" class="hover:underline hover:text-argile h-full flex items-center">Philosophie</a>
       <a href="produits.html" class="hover:underline hover:text-argile h-full flex items-center">Produits</a>
       <a href="reservation.html" class="hover:underline hover:text-argile h-full flex items-center">Réservation</a>
       <a href="contact.html" class="hover:underline hover:text-argile h-full flex items-center">Contact</a>
+
+      <!-- Logo panier personnalisé -->
+      <a href="panier.html" class="flex items-center hover:opacity-80" title="Logo panier La Ferme des Bois" aria-label="Logo panier La Ferme des Bois">
+        <img src="photos/panier_gite_la_ferme_des_bois.svg" alt="Logo Panier" class="h-7 w-7" />
+      </a>
+
+      <!-- Icône panier -->
+      <a href="panier.html" class="hover:text-argile" title="Voir le panier">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+          stroke="currentColor" class="h-7 w-7">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6h13L17 13M9 21a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
+        </svg>
+      </a>
+      <!-- Panier avec badge -->
+      <a href="panier.html" class="relative hover:text-argile" title="Voir le panier">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" class="h-7 w-7">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6h13L17 13M9 21a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z" />
+        </svg>
+        <span id="cart-count"
+              class="absolute -top-1 -right-1 bg-argile text-white text-xs font-bold rounded-full px-1.5">
+          2
+        </span>
+      </a>
     </nav>
   </div>
 </header>

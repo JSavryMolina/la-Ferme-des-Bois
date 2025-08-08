@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panier – La Ferme des Bois</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-washi text-argile font-sans">
+
+  <!-- Inclure ton header ici -->
+  <div id="header">
+    <!-- Tu peux utiliser un include ou coller le code de ton header ici -->
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 py-24">
+    <h1 class="text-3xl font-bold text-matcha mb-6">Votre panier</h1>
+
+    <div id="panier" class="space-y-6">
+      <!-- Exemple de produit -->
+      <div class="flex items-center justify-between bg-white p-4 rounded shadow">
+        <div>
+          <h2 class="text-lg font-semibold">Infusion aux herbes</h2>
+          <p class="text-sm text-gray-600">Sachet de 50g</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <input type="number" min="1" value="2" class="w-16 border rounded px-2 py-1 text-center" onchange="updateTotal()">
+          <span class="text-lg font-semibold">8€</span>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between bg-white p-4 rounded shadow">
+        <div>
+          <h2 class="text-lg font-semibold">Savon naturel</h2>
+          <p class="text-sm text-gray-600">À la lavande</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <input type="number" min="1" value="1" class="w-16 border rounded px-2 py-1 text-center" onchange="updateTotal()">
+          <span class="text-lg font-semibold">6€</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total -->
+    <div class="mt-8 text-right">
+      <p class="text-xl font-bold">Total : <span id="total">22</span> €</p>
+    </div>
+
+    <!-- Bouton valider -->
+    <div class="mt-6 text-right">
+      <a href="confirmation.html" class="bg-matcha text-washi font-bold px-6 py-3 rounded hover:bg-argile transition">
+        Finaliser la commande
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer (optionnel) -->
+  <footer class="text-center text-sm text-gray-500 mt-16 mb-6">
+    © La Ferme des Bois – 2025
+  </footer>
+
+  <!-- Script de calcul automatique -->
+  <script>
+    function updateTotal() {
+      const lignes = document.querySelectorAll('#panier > div');
+      let total = 0;
+      lignes.forEach(ligne => {
+        const prix = parseFloat(ligne.querySelector('span').innerText.replace('€', ''));
+        const quantite = parseInt(ligne.querySelector('input').value);
+        total += prix * quantite;
+      });
+      document.getElementById('total').innerText = total;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateTotal);
+  </script>
+
+</body>
+</html>
