@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produits - La Ferme des Bois</title>
+  <link href="dist/output.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-washi text-brun min-h-screen flex flex-col">
+
+  <!-- Header fixe -->
+  <div id="header-placeholder"></div>
+
+  <!-- Contenu principal avec padding top pour laisser la place au header -->
+  <main style="padding-top: 64px; max-width: 1280px; margin: auto; padding-left: 1rem; padding-right: 1rem;" class="flex-grow">
+
+    <!-- Titre principal -->
+    <h1 class="text-4xl font-extrabold text-matcha mb-6 text-center">
+      Nos liqueurs artisanales
+    </h1>
+
+    <!-- Frise horizontale colorée -->
+    <div class="h-2 max-w-xl mx-auto mb-8 rounded" style="background: linear-gradient(90deg, #3E5C45, #C9975D, #94845c, #3A2E2A);"></div>
+
+    <!-- Texte de présentation -->
+    <section class="max-w-3xl mx-auto mb-12 text-center text-brun leading-relaxed">
+      <p>
+        Située au cœur du Pays d’Auge, notre ferme bénéficie d’un terroir exceptionnel avec des sols riches et préservés.  
+        Grâce à cette qualité unique, nos liqueurs artisanales expriment toute la saveur authentique et la richesse de la nature normande.
+      </p>
+    </section>
+
+    <!-- Contenu avec menu à gauche et produits à droite -->
+    <div class="flex gap-8">
+
+      <!-- Menu à gauche -->
+      <aside class="bg-white p-4 shadow rounded w-48 flex-shrink-0">
+        <h2 class="font-bold text-lg mb-4">Menu</h2>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-green-700 hover:underline">Liqueurs</a></li>
+          <li><a href="#" class="text-green-700 hover:underline">Miel</a></li>
+          <li><a href="#" class="text-green-700 hover:underline">Infusions</a></li>
+        </ul>
+      </aside>
+
+      <!-- Grille des produits -->
+      <section class="bg-white text-black p-4 rounded flex-grow min-w-0">
+        <div class="grid grid-cols-3 gap-6">
+          
+          <!-- Exemple produit -->
+          <article class="bg-gray-200 rounded p-4 text-center flex flex-col justify-between">
+            <div class="h-40 bg-gray-400 mb-3 flex items-center justify-center">
+              <!-- Image produit -->
+              <span class="text-gray-700">Photo produit 1</span>
+            </div>
+            <h3 class="font-semibold mb-1">Liqueur de Cerise</h3>
+            <p class="mb-2">Stock : 12</p>
+
+            <!-- Contrôle quantité -->
+            <div class="flex items-center justify-center mb-3 space-x-2">
+              <button class="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span class="w-6 text-center font-semibold">1</span>
+              <button class="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+
+            <!-- Bouton Ajouter au panier -->
+            <button class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">
+              Ajouter au panier
+            </button>
+          </article>
+
+          <!-- Répète les produits selon besoin -->
+          <article class="bg-gray-200 rounded p-4 text-center flex flex-col justify-between">
+            <div class="h-40 bg-gray-400 mb-3 flex items-center justify-center">
+              <span class="text-gray-700">Photo produit 2</span>
+            </div>
+            <h3 class="font-semibold mb-1">Miel de Fleurs</h3>
+            <p class="mb-2">Stock : 8</p>
+
+            <div class="flex items-center justify-center mb-3 space-x-2">
+              <button class="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span class="w-6 text-center font-semibold">1</span>
+              <button class="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+
+            <button class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">
+              Ajouter au panier
+            </button>
+          </article>
+
+          <article class="bg-gray-200 rounded p-4 text-center flex flex-col justify-between">
+            <div class="h-40 bg-gray-400 mb-3 flex items-center justify-center">
+              <span class="text-gray-700">Photo produit 3</span>
+            </div>
+            <h3 class="font-semibold mb-1">Infusion Verveine</h3>
+            <p class="mb-2">Stock : 15</p>
+
+            <div class="flex items-center justify-center mb-3 space-x-2">
+              <button class="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <span class="w-6 text-center font-semibold">1</span>
+              <button class="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+
+            <button class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">
+              Ajouter au panier
+            </button>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('header.html')
+      .then(r => r.text())
+      .then(d => document.getElementById('header-placeholder').innerHTML = d);
+
+    fetch('footer.html')
+      .then(r => r.text())
+      .then(d => document.getElementById('footer-placeholder').innerHTML = d);
+  </script>
+</body>
+</html>

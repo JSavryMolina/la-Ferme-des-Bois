@@ -2,76 +2,84 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Produits - La Ferme des Bois</title>
   <link href="dist/output.css" rel="stylesheet" />
-  <!-- Font Awesome pour les icônes sociales -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .leaf {
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(3deg); }
-      100% { transform: translateY(0) rotate(0deg); }
-    }
-  </style>
 </head>
 <body class="bg-washi text-brun min-h-screen flex flex-col">
 
-  <!-- Header chargé dynamiquement -->
+  <!-- Header -->
   <div id="header-placeholder"></div>
 
+  <!-- Titre Nos produits -->
+  <h1 id="page-title" class="text-matcha font-extrabold text-4xl text-center mt-8 max-w-7xl mx-auto">
+    Nos produits
+  </h1>
+
   <!-- Contenu principal -->
-  <main class="flex-grow px-4 py-8 pt-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
-  <!-- Colonne principale -->
-  <section class="lg:col-span-3 bg-feuille rounded-xl shadow-xl p-10 space-y-6 text-center">
-    <div class="text-6xl leaf">🌿</div>
-    <h1 class="text-4xl font-extrabold text-matcha">Page en construction</h1>
-    <p class="text-lg text-encre leading-relaxed">
-      Nos produits seront bientôt disponibles en ligne : <strong>liqueurs artisanales</strong>, herbes séchées, infusions et récoltes du potager bio.
-    </p>
-    <p class="text-md text-brun font-semibold">
-      Merci de votre patience et à très bientôt à la Ferme des Bois !
-    </p>
-    <a href="contact.html" class="inline-block bg-matcha text-washi px-6 py-3 rounded-full font-semibold hover:bg-argile transition">
-      🔔 Soyez prévenu du lancement
-    </a>
-  </section>
+  <main id="main-content" class="flex-grow px-4 py-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
 
-  <!-- Menu latéral à droite -->
-  <aside class="lg:col-span-1 bg-washi shadow-lg rounded-xl p-6 space-y-4 h-fit sticky top-24">
-    <h2 class="text-xl font-bold text-matcha mb-2">Catégorie</h2>
-    <div class="flex flex-col space-y-3">
-      <button class="bg-matcha text-washi py-2 px-4 rounded hover:bg-argile transition text-left">Liqueurs</button>
-      <button class="bg-matcha text-washi py-2 px-4 rounded hover:bg-argile transition text-left">Infusions</button>
-      <button class="bg-matcha text-washi py-2 px-4 rounded hover:bg-argile transition text-left">Herbes séchées</button>
-      <button class="bg-matcha text-washi py-2 px-4 rounded hover:bg-argile transition text-left">Récoltes du potager</button>
-    </div>
-  </aside>
-</main>
+    <!-- ASIDE (Menu) -->
+    <aside class="bg-white p-4 shadow rounded">
+      <h2 class="font-bold text-lg mb-4">Menu</h2>
+      <ul class="space-y-2">
+        <li><a href="liqueurs.html" class="text-green-700 hover:underline">Liqueurs</a></li>
+        <li><a href="miel.html" class="text-green-700 hover:underline">Miel</a></li>
+        <li><a href="infusions.html" class="text-green-700 hover:underline">Infusions</a></li>
+      </ul>
+    </aside>
 
+    <!-- Grille photos produits -->
+    <section class="bg-white p-4 shadow rounded md:col-span-3">
+      <h2 class="sr-only">Catégories de produits</h2>
 
-  <!-- Footer chargé dynamiquement -->
+      <div class="grid grid-cols-3 gap-6">
+        <a href="liqueurs.html" class="block rounded overflow-hidden shadow-lg cursor-pointer hover:shadow-2xl transition">
+          <img src="photos/liqueurs.jpg" alt="Liqueurs" class="w-full h-48 object-cover" />
+        </a>
+        <a href="miel.html" class="block rounded overflow-hidden shadow-lg cursor-pointer hover:shadow-2xl transition">
+          <img src="photos/miel.jpg" alt="Miel" class="w-full h-48 object-cover" />
+        </a>
+        <a href="infusions.html" class="block rounded overflow-hidden shadow-lg cursor-pointer hover:shadow-2xl transition">
+          <img src="photos/infusions.jpg" alt="Infusions" class="w-full h-48 object-cover" />
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Scripts d’inclusion -->
+  <!-- Scripts -->
   <script>
     fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
+      .then(r => r.text())
+      .then(d => {
+        document.getElementById('header-placeholder').innerHTML = d;
+        adjustMainPadding();
+        window.addEventListener('resize', adjustMainPadding);
       });
 
     fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
+      .then(r => r.text())
+      .then(d => document.getElementById('footer-placeholder').innerHTML = d);
+
+    function adjustMainPadding() {
+      const header = document.querySelector('header');
+      const main = document.getElementById('main-content');
+      const title = document.getElementById('page-title');
+
+      if (header && main && title) {
+        const headerHeight = header.offsetHeight;
+        main.style.paddingTop = (headerHeight + 16) + 'px'; // 1rem marge top pour main
+        title.style.marginTop = (headerHeight + 24) + 'px'; // un peu plus pour le titre
+      }
+    }
   </script>
+
 </body>
 </html>
