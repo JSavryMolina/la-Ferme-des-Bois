@@ -15,46 +15,72 @@
   <div id="header-placeholder"></div>
 
   <!-- Contenu principal avec padding top pour laisser la place au header -->
-  <main style="padding-top: 64px; max-width: 1280px; margin: auto; padding-left: 1rem; padding-right: 1rem;" class="flex-grow">
+  <main style="padding-top: 128px; max-width: 1280px; margin: auto; padding-left: 1rem; padding-right: 1rem;" class="flex-grow">
 
     <!-- Titre principal -->
     <h1 class="text-4xl font-extrabold text-matcha mb-6 text-center">
-      Nos liqueurs artisanales
+      Nos liqueurs
     </h1>
 
     <!-- Frise horizontale colorée -->
-    <div class="h-2 max-w-xl mx-auto mb-8 rounded" style="background: linear-gradient(90deg, #3E5C45, #C9975D, #94845c, #3A2E2A);"></div>
+    <div class="h-2 max-w-xl mx-auto mb-12 rounded" style="background: linear-gradient(90deg, #3E5C45, #C9975D, #94845c, #3A2E2A);"></div>
 
     <!-- Texte de présentation -->
-    <section class="max-w-3xl mx-auto mb-12 text-center text-brun leading-relaxed">
-      <p>
-        Située au cœur du Pays d’Auge, notre ferme bénéficie d’un terroir exceptionnel avec des sols riches et préservés.  
-        Grâce à cette qualité unique, nos liqueurs artisanales expriment toute la saveur authentique et la richesse de la nature normande.
-      </p>
-    </section>
+<section class="max-w-3xl mx-auto mb-12 text-center text-brun leading-relaxed bg-argile/10 p-6 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-matcha mb-4">
+    Liqueurs artisanales – Le goût authentique du Pays d’Auge
+  </h2>
+  <p class="mb-4">
+    Nichée au cœur du <span class="font-semibold">Pays d’Auge</span>, la Ferme des Bois s’épanouit sur un terroir préservé,
+    aux sols riches et généreux. Ici, la nature nous offre le meilleur : une terre vivante, nourrie par des pratiques
+    respectueuses et le rythme des saisons.
+  </p>
+  <p class="mb-4">
+    De cette qualité unique naissent nos <span class="font-semibold">liqueurs artisanales</span>, véritables concentrés
+    d’arômes et de savoir-faire. <span class="italic">Herbes et fleurs</span> sont cultivées avec passion dans nos jardins,
+    récoltées à la main au moment parfait, puis infusées lentement pour révéler toute la profondeur aromatique de la Normandie.
+  </p>
+  <p class="font-semibold text-matcha">
+    🍃 Petites quantités, grande authenticité.  
+    Chaque gorgée raconte notre histoire, celle d’une ferme où la nature est reine et le goût, une promesse tenue.
+  </p>
+</section>
 
     <!-- Contenu avec menu à gauche et produits à droite -->
     <div class="flex gap-8">
 
       <!-- Menu à gauche -->
-      <aside class="bg-white p-4 shadow rounded w-48 flex-shrink-0">
-        <h2 class="font-bold text-lg mb-4">Menu</h2>
-        <ul class="space-y-2">
-          <li><a href="#" class="text-green-700 hover:underline">Liqueurs</a></li>
-          <li><a href="#" class="text-green-700 hover:underline">Miel</a></li>
-          <li><a href="#" class="text-green-700 hover:underline">Infusions</a></li>
-        </ul>
-      </aside>
+<aside class="bg-white p-4 shadow-lg rounded-lg w-56 flex-shrink-0 border border-matcha">
+  <h2 class="font-bold text-lg mb-4 text-center text-matcha border-b-2 border-argile pb-2">
+    Catégorie
+  </h2>
+  <ul class="space-y-2">
+    <li>
+      <a href="#" class="block border border-argile rounded px-3 py-2 text-green-700 hover:bg-feuille hover:text-brun transition">
+        Liqueurs
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block border border-argile rounded px-3 py-2 text-green-700 hover:bg-feuille hover:text-brun transition">
+        Miel
+      </a>
+    </li>
+    <li>
+      <a href="#" class="block border border-argile rounded px-3 py-2 text-green-700 hover:bg-feuille hover:text-brun transition">
+        Infusions
+      </a>
+    </li>
+  </ul>
+</aside>
 
       <!-- Grille des produits -->
       <section class="bg-white text-black p-4 rounded flex-grow min-w-0">
         <div class="grid grid-cols-3 gap-6">
-          
-          <!-- Exemple produit -->
+
           <article class="bg-gray-200 rounded p-4 text-center flex flex-col justify-between">
             <div class="h-40 bg-gray-400 mb-3 flex items-center justify-center">
               <!-- Image produit -->
-              <span class="text-gray-700">Photo produit 1</span>
+              <img src="photos/produits/liqueurs/Liqueur de Cerise Artisanale.png" alt="Liqueur de Cerise Artisanale" class="h-full object-contain rounded" />
             </div>
             <h3 class="font-semibold mb-1">Liqueur de Cerise</h3>
             <p class="mb-2">Stock : 12</p>
@@ -76,12 +102,11 @@
             </button>
           </article>
 
-          <!-- Répète les produits selon besoin -->
           <article class="bg-gray-200 rounded p-4 text-center flex flex-col justify-between">
             <div class="h-40 bg-gray-400 mb-3 flex items-center justify-center">
-              <span class="text-gray-700">Photo produit 2</span>
+              <img src="photos/produits/liqueurs/Liqueur de Menthe sur fond beige.png" alt="Miel de Fleurs" class="h-full object-contain rounded" />
             </div>
-            <h3 class="font-semibold mb-1">Miel de Fleurs</h3>
+            <h3 class="font-semibold mb-1">Liqueur de Fraises</h3>
             <p class="mb-2">Stock : 8</p>
 
             <div class="flex items-center justify-center mb-3 space-x-2">
@@ -101,9 +126,9 @@
 
           <article class="bg-gray-200 rounded p-4 text-center flex flex-col justify-between">
             <div class="h-40 bg-gray-400 mb-3 flex items-center justify-center">
-              <span class="text-gray-700">Photo produit 3</span>
+              <img src="photos/produits/liqueurs/Liqueur d'Herbes artisanale au naturel.png" alt="Infusion Verveine" class="h-full object-contain rounded" />
             </div>
-            <h3 class="font-semibold mb-1">Infusion Verveine</h3>
+            <h3 class="font-semibold mb-1">Liqueur d'Herbes</h3>
             <p class="mb-2">Stock : 15</p>
 
             <div class="flex items-center justify-center mb-3 space-x-2">
@@ -139,5 +164,34 @@
       .then(r => r.text())
       .then(d => document.getElementById('footer-placeholder').innerHTML = d);
   </script>
+<!-- Script pour gérer boutons plus/moins -->
+  <script>
+    // On attend que le DOM soit chargé
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pour chaque produit, on cherche les boutons + et -
+      document.querySelectorAll('article').forEach(article => {
+        const btnMinus = article.querySelector('button:has(i.fa-minus)');
+        const btnPlus = article.querySelector('button:has(i.fa-plus)');
+        const qtySpan = article.querySelector('span.w-6');
+
+        if (btnMinus && btnPlus && qtySpan) {
+          btnMinus.addEventListener('click', () => {
+            let currentQty = parseInt(qtySpan.textContent, 10);
+            if (currentQty > 1) {
+              qtySpan.textContent = currentQty - 1;
+            }
+          });
+
+          btnPlus.addEventListener('click', () => {
+            let currentQty = parseInt(qtySpan.textContent, 10);
+            qtySpan.textContent = currentQty + 1;
+          });
+        }
+      });
+    });
+  </script>
+
+
+
 </body>
 </html>
